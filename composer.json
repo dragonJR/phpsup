@@ -14,10 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Sup\\SupArray\\": "src/Sup/SupArray",
-            "Sup\\SupString\\": "src/Sup/SupString",
-            "Sup\\SupFile\\": "src/Sup/SupFile",
-            "Sup\\SupTime\\": "src/Sup/SupTime"
+            "Sup\\Utils\\": "src/Sup/Utils"
         }
     }
 }
