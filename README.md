@@ -11,6 +11,8 @@ SupArr       数组的辅助类
 SupStr       字符串的辅助类
 SupTime      时间的辅助类
 SupCurl      请求的辅助类
+    ---- curlPost  post请求
+    ---- curlGet   get请求
 SupRegular   正则的辅助类
 SupValidate  验证的辅助类
 SupEncrypt   加密解密的辅助类

@@ -4,5 +4,4 @@ namespace Sup\Utils;
 class SupRegular{
     
 }
-
 ?>
