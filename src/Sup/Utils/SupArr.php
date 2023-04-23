@@ -40,7 +40,7 @@ class SupArr
     /**
      * 数组根据字段进行排序
      */
-    public static function arrMultiSort($arr, $keys, $type = 'desc'){
+    public static function arrSort($arr, $keys, $type = 'desc'){
         $key_value = $new_array = array();
         foreach ($arr as $k => $v) {
             $key_value[$k] = $v[$keys];
@@ -107,26 +107,17 @@ class SupArr
     }
 
      /**
-     * 数组转换其他格式
+     * 数组转换对象
      */
-    public static function conversionArr($arr,$type='obj'){
-        $return_arr=array();
-        switch ($type) {
-            case 'obj':
-                # code...
-                break;
-            case 'xml':
-                # code...
-                break;
-            case 'json':
-                break;
-            case 'serialize':
-                # code...
-                break;
-            default:
-                break;
+    public static function arrToObj($arr){
+        if (gettype($arr) != 'array') {
+            return;
         }
-        return $return_arr;
-
+        foreach ($arr as $k => $v) {
+            if (gettype($v) == 'array' || getType($v) == 'object') {
+                $arr[$k] = (object)self::arrToObj($v);
+            }
+        }
+        return (object)$arr;
     }
 }
