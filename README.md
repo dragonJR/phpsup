@@ -23,4 +23,4 @@ SupRandom    随机生成辅助类
     ---- nozero  生成指定长度的无0随机数字
 SupValidate  验证的辅助类
 SupEncrypt   加密解密的辅助类
-
+test
