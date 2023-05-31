@@ -47,6 +47,7 @@ class SupCurl{
         return $result;
     
     }
+    
     /**
      * 发送GET请求方法
      * @param  string $url    请求URL
