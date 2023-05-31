@@ -3,6 +3,8 @@ namespace Sup\Utils;
 
 class SupEncrypt{
     
+
+    
 }
 
 ?>
