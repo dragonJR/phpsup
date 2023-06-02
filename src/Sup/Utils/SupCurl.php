@@ -13,7 +13,7 @@ class SupCurl{
      * @return array  $data   响应数据
     */
     public static function curlPost($url, $post_data = array(), $timeout = 30, $header = "", $data_type = ""){
-        $header = empty($header) ? '' : $header;
+        $header = empty($header) ? [] : $header;
         //支持json数据数据提交
         if($data_type == 'json'){
             $post_string = json_encode($post_data);
@@ -56,8 +56,9 @@ class SupCurl{
      * @param  array $header 请求头
      * @return array  $data   响应数据
     */
-    public static function curlGet($url, $post_data = array(), $timeout = 30, $header = ""){
-        $header = empty($header) ? '' : $header;
+    public static function curlGet($url, $post_data = array(), $timeout = 30, $header = [])
+    {
+        $header = empty($header) ? [] : $header;
         $url=$url . '?' . http_build_query($post_data);
         
         $ch = curl_init();    // 启动一个CURL会话
@@ -75,8 +76,10 @@ class SupCurl{
         // 打印请求的header信息
         //$a = curl_getinfo($ch);
         //var_dump($a);
-     
         curl_close($ch);
+        if(is_string($result)){
+            return json_decode($result, true);
+        }
         return $result;
     }
 }
